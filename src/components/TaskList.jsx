@@ -1,10 +1,11 @@
 import Task from "./Task";
-
+import { useTaskContext } from "./TaskContext";
 // This component specifically renders the list of tasks.
 // If there are no tasks, it will render "No tasks to display"
 
 // This also renders how many tasks are in the list.
-function TaskList({ tasks, updateCompleted, updateDescription }) {
+function TaskList() {
+   const { tasks } = useTaskContext();
    return (
       <div>
          {tasks.length > 0 ? (
@@ -13,8 +14,6 @@ function TaskList({ tasks, updateCompleted, updateDescription }) {
                   key={index} // in a map, always pass a unique key value
                   {...task}
                   index={index}
-                  updateCompleted={updateCompleted}
-                  updateDescription={updateDescription}
                />
             ))
          ) : (

@@ -7,17 +7,11 @@ import EditDescription from "./EditDescription";
  * It's purpose is to show the checkbox, the description, and the edit and delete buttons
  * All the logic of the buttons are passed down from App.jsx
  */
-function Task({
-   description = "",
-   completed = false,
-
-   index,
-   updateCompleted,
-   updateDescription,
-}) {
+function Task({ description = "", completed = false, index }) {
    // Create a state to conditionally render the edit input
    const [editing, setEditing] = useState(false);
-   const { deleteTask } = useContext(TaskContext);
+   const { deleteTask, updateCompleted, updateDescription } =
+      useContext(TaskContext);
    // after editing, update the description, and then turn off editing
    const handleEdit = (index, description) => {
       updateDescription(index, description);
