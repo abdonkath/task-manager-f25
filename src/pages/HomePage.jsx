@@ -10,7 +10,7 @@ function HomePage() {
          sx={{
             backgroundColor: "#E7CDE1",
             minHeight: "100vh",
-            margin: 0, // Remove any margin
+            margin: 0,
             padding: 0,
          }}
       >
@@ -29,7 +29,7 @@ function HomePage() {
                      Task Manager Project!
                   </Typography>
                   <Typography variant="subtitle1" color="GrayText">
-                     Built by Spiderman
+                     Built by Kathleen Abdon
                   </Typography>
                </Stack>
 

@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { TaskContext } from "./TaskContext";
 import EditDescription from "./EditDescription";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 function Task({ description = "", completed = false, index }) {
    const [editing, setEditing] = useState(false);
    const { deleteTask, updateCompleted, updateDescription } =
@@ -82,6 +84,23 @@ function Task({ description = "", completed = false, index }) {
             }}
          >
             Delete
+         </Button>
+
+         <Button
+            component={Link}
+            to={`/tasks/${index + 1}`}
+            variant="contained"
+            size="small"
+            sx={{
+               color: "#ffffffff",
+               borderColor: "#ffffffff",
+               textTransform: "none",
+               borderRadius: "0.5rem",
+               fontWeight: 500,
+               ":hover": { backgroundColor: "#f3e5f5" },
+            }}
+         >
+            View
          </Button>
       </div>
    );

@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, Box } from "@mui/material";
+import { Button } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useTaskContext } from "./TaskContext";
 
@@ -16,6 +16,10 @@ function TaskForm() {
    const handleSubmit = (e) => {
       e.preventDefault();
 
+      if (!description.trim()) {
+         alert("Enter a task description before adding.");
+         return;
+      }
       addTask(description);
 
       setDescription("");
