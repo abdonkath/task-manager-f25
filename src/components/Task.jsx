@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { TaskContext } from "./TaskContext";
 import EditDescription from "./EditDescription";
-
+import { Button } from "@mui/material";
 function Task({ description = "", completed = false, index }) {
    const [editing, setEditing] = useState(false);
    const { deleteTask, updateCompleted, updateDescription } =
@@ -52,8 +52,37 @@ function Task({ description = "", completed = false, index }) {
                {description}
             </span>
          )}
-         {!completed && <button onClick={() => setEditing(true)}>Edit</button>}
-         <button onClick={handleDelete}>Delete</button>
+
+         <Button
+            onClick={() => setEditing(true)}
+            variant="outlined"
+            size="small"
+            sx={{
+               color: "#641a92ff",
+               borderColor: "#ac84e0ff",
+               textTransform: "none",
+               borderRadius: "0.5rem",
+               fontWeight: 500,
+               ":hover": { backgroundColor: "#f3e5f5" },
+            }}
+         >
+            Edit
+         </Button>
+
+         <Button
+            onClick={handleDelete}
+            variant="contained"
+            size="small"
+            sx={{
+               backgroundColor: "#f7a4a4ff",
+               textTransform: "none",
+               borderRadius: "0.5rem",
+               fontWeight: 500,
+               ":hover": { backgroundColor: "#ec7171ff" },
+            }}
+         >
+            Delete
+         </Button>
       </div>
    );
 }

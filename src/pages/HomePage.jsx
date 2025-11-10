@@ -7,8 +7,12 @@ function HomePage() {
       <Stack
          direction="row"
          justifyContent="center"
-         minHeight="80vh"
-         marginY="auto"
+         sx={{
+            backgroundColor: "#E7CDE1",
+            minHeight: "100vh",
+            margin: 0, // Remove any margin
+            padding: 0,
+         }}
       >
          <Box padding={16}>
             <div>
@@ -34,6 +38,9 @@ function HomePage() {
                   variant="contained"
                   component={Link}
                   to="/tasks"
+                  sx={{
+                     backgroundColor: "#b38ae5",
+                  }}
                >
                   See my tasks
                </Button>

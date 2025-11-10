@@ -3,6 +3,7 @@ import { TaskForm, TaskList, TaskContext } from "../components";
 import axios from "axios";
 import { tasksSlice } from "../redux/tasksSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Button, Stack, Typography, Box } from "@mui/material";
 
 function TasksPage() {
    // const [taskList, dispatch] = useReducer(tasksReducer, []);
@@ -50,18 +51,32 @@ function TasksPage() {
    }
 
    return (
-      <TaskContext
-         value={{
-            tasks: taskList,
-            addTask,
-            deleteTask,
-            updateCompleted,
-            updateDescription,
+      <div
+         style={{
+            border: "1px solid #ccc",
+            borderRadius: 8,
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+            width: "50%",
+            backgroundColor: "#fff",
+            margin: "40px auto",
+            fontSize: "1.4rem",
          }}
       >
-         <TaskForm />
-         <TaskList />
-      </TaskContext>
+         <Stack justifyContent="center" alignItems="center" minHeight="100vh">
+            <TaskContext
+               value={{
+                  tasks: taskList,
+                  addTask,
+                  deleteTask,
+                  updateCompleted,
+                  updateDescription,
+               }}
+            >
+               <TaskForm />
+               <TaskList />
+            </TaskContext>
+         </Stack>
+      </div>
    );
 }
 

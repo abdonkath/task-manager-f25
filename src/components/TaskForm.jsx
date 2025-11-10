@@ -1,3 +1,4 @@
+import { Button, Stack, Typography, Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useTaskContext } from "./TaskContext";
 
@@ -22,7 +23,7 @@ function TaskForm() {
 
    return (
       <form onSubmit={handleSubmit}>
-         <label htmlFor="description">Description</label>
+         <label htmlFor="description">Description: </label>
          <input
             type="text"
             id="description"
@@ -32,8 +33,26 @@ function TaskForm() {
             onChange={(e) => {
                setDescription(e.target.value);
             }}
+            style={{
+               width: "15rem",
+               height: "2.5rem",
+            }}
          />
-         <button type="submit">Add Task</button>
+
+         <Button
+            type="submit"
+            variant="contained"
+            sx={{
+               marginLeft: "1rem",
+               backgroundColor: "#b38ae5",
+               textTransform: "none",
+               borderRadius: "0.5rem",
+               fontWeight: 500,
+               ":hover": { backgroundColor: "#9e5bf0ff" },
+            }}
+         >
+            Add Task
+         </Button>
       </form>
    );
 }
